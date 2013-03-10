@@ -1,0 +1,30 @@
+%******************************** OVERVIEW ************************************
+% Provides a customised spacing for my lists (usually lists have way too much spacing!
+%
+%********************************** USAGE *************************************
+%
+%\begin{djs_itemize}
+%   ...
+% \end{djs_itemize}
+%
+%****************************** SPECIFICATION *********************************
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{djs_lists}[02/10/2008 - DJS Lists]
+
+%***************************** ENVIRONMENTS ***********************************
+
+\newenvironment{djs_itemize}[0]{
+  \begin{list}{\textbullet}
+    { \setlength{\itemsep}{0pt}
+       \setlength{\parsep}{0pt}
+       \setlength{\topsep}{-0.5em}
+       \setlength{\partopsep}{0pt}
+       \setlength{\leftmargin}{2.5em}
+       \setlength{\labelwidth}{2em}
+       \setlength{\labelsep}{0.5em} }
+}{
+  \end{list}
+}
+
+\endinput

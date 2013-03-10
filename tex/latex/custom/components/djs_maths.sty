@@ -1,0 +1,31 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{djs_maths}[28/12/2006 - DJS Mathematics Configuration]
+
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+
+% Theorems
+\theoremstyle{plain}
+\newtheorem{notn}{Notation}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{therm}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{ques}{Question}
+\newenvironment{eg}
+{\begin{example}\rm}
+{\end{example}\hspace*{\fill}\qedsymbol}
+
+\newenvironment{prf}
+{\begin{list}{}{\leftmargin=1.2cm \rightmargin=1.2cm}
+  \item [{\em Proof:}]}
+{\end{list}{\hspace*{\fill}\qedsymbol}}
+
+% Boldmath font command for use while in math mode
+\newcommand{\bm}[1]{\mbox{\boldmath{$#1$}}}
+
+\endinput

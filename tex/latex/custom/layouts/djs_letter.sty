@@ -1,0 +1,65 @@
+% File: djs_letter.sty
+% Type: Layout style
+% Special Commands:
+%        letterhead{_title_} - a simple, centred title.
+%        header{_label_} - an underlined section header.
+%        subheader{_label_} - a smaller, coloured section header.
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{djs_letter}[26/09/2008 - Simple Letter Format (DJS)]
+
+%****************************** DEPENDENCIES **********************************
+
+\RequirePackage{djs_color,djs_lists,djs_unicode,djs_url}
+
+%****************************** FORMATTING ************************************
+
+\thispagestyle{empty}
+
+%******************************** MARGINS *************************************
+
+\newlength{\widen}
+\newlength{\heighten}
+
+\parindent 0mm
+\parskip 3mm
+
+\setlength{\widen}{1.00in}
+\setlength{\heighten}{1.00in}
+
+\addtolength{\oddsidemargin}{-\widen}
+\addtolength{\evensidemargin}{-\widen}
+\addtolength{\textwidth}{2\widen}
+\addtolength{\topmargin}{-\heighten}
+\addtolength{\textheight}{2\heighten}
+
+\addtolength{\oddsidemargin}{+0.0in}
+\addtolength{\evensidemargin}{-0.5in}
+
+%******************************** HEADERS *************************************
+% Not allowing nesting, only headers and subheaders.
+%******************************************************************************
+
+% Letter head title.
+\newcommand{\letterhead}[1] {
+  \begin{center}
+    \sctitle[Huge]{#1}
+  \end{center}
+}
+
+% Section header with an underline going across the page
+\newcommand{\header}[1]{
+  \vspace{1em}
+  \sctitle{#1} \\
+  \rule[1em]{\textwidth}{1pt}
+  \vspace{-2em}
+}
+
+% Bold, coloured subsection header
+\newcommand{\subheader}[1]{
+  \vspace{1em}
+  \textcolor{maroon}{\textbf{#1}}
+}
+
+
+\endinput

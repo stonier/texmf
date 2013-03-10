@@ -1,0 +1,75 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{paper}[25/04/2004 - Paper Format]
+
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{epsf}		% I no longer use, but for backward compatibility with old files
+\RequirePackage{multicol}
+\RequirePackage{graphicx}	% Replaces my old use of epsf - provides png support.
+
+\newlength{\widen}
+\newlength{\heighten}
+
+\parindent 0mm
+\parskip 3mm
+
+% Decrease these values for wider margins, increase for skinnier margins
+\setlength{\widen}{1.00in}
+\setlength{\heighten}{1.00in}
+
+\addtolength{\oddsidemargin}{-\widen}
+\addtolength{\evensidemargin}{-\widen}
+\addtolength{\textwidth}{2\widen}
+\addtolength{\topmargin}{-\heighten}
+\addtolength{\textheight}{2\heighten}
+
+\addtolength{\oddsidemargin}{+0.0in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\theoremstyle{plain}
+\newtheorem{notn}{Notation}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{therm}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{ques}{Question}
+\newenvironment{eg}
+{\begin{example}\rm}
+{\end{example}\hspace*{\fill}\qedsymbol}
+
+\newenvironment{prf}
+{\begin{list}{}{\leftmargin=1.2cm \rightmargin=1.2cm}
+  \item [{\em Proof:}]}
+{\end{list}{\hspace*{\fill}\qedsymbol}}
+
+% Multicol settings
+\columnsep=20pt
+%\columnseprule=0.4pt  For a column through the middle
+
+% Need to create an alternative figure env for multicol
+% settings since normal figures wont float around
+% in multicol environments
+%\makeatletter
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+
+% Curly underlines for vector notation. 
+% mvec = my vector notation
+% svec = construct that sets up subscripts properly
+% \def\mvec#1{\mathop{#1}\limits_{\sim}}
+\newcommand{\undertilde}[1]{\mathord{\vtop{\ialign{##\crcr
+     $\hfil\displaystyle{#1}\hfil$\crcr\noalign{\kern1.5pt \nointerlineskip}
+     $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
+\newcommand{\mvec}[1]{\ensuremath{\undertilde{#1}}}
+\def\svec#1#2{\mvec{#1}{}_{#2}}
+
+% Make a boldmath font command for use while in math mode
+\newcommand{\bm}[1]{\mbox{\boldmath{$#1$}}}
+
+\endinput

@@ -1,0 +1,44 @@
+% File: djs_paper.sty
+% Type: Paper publication style
+% 
+% Should be used with two column format, i.e.
+%
+% \documentclass[a4paper,10pt,twocolumn]{article}
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{djs_paper}[11/04/2010 - Simple Paper Format (Daniel Stonier)]
+
+%****************************** DEPENDENCIES **********************************
+
+\RequirePackage{djs_color,djs_lists,djs_unicode,djs_url}
+
+%******************************** LAYOUT **************************************
+
+\thispagestyle{empty}
+% Reduce space between sections
+\usepackage[compact]{titlesec}
+
+%******************************** MARGINS *************************************
+
+\parindent 0mm
+\parskip 3mm
+
+% Setting margins for pages/multicolumns
+\usepackage[top=1cm,bottom=1cm,left=1.5cm,right=1.5cm]{geometry}
+
+% Old style of setting margins I used for my thesis
+%\newlength{\widen}
+%\newlength{\heighten}
+%\setlength{\widen}{1.00in}
+%\setlength{\heighten}{1.00in}
+%\addtolength{\oddsidemargin}{-\widen}
+%\addtolength{\evensidemargin}{-\widen}
+%\addtolength{\textwidth}{2\widen}
+%\addtolength{\topmargin}{-\heighten}
+%\addtolength{\textheight}{2\heighten}
+%\addtolength{\oddsidemargin}{+0.0in}
+%\addtolength{\evensidemargin}{-0.5in}
+
+
+
+\endinput

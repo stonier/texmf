@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>Including graphics in LaTeX/PDF documents</title>
+</head>
+
+<body bgcolor=#ffffff>
+
+<h2>Including graphics in LaTeX/PDF documents</h2>
+
+Here we discuss how to include graphics in a LaTeX document intended
+to be later converted to PDF format, paying special attention to how
+to maintain simultaneous DVI and PDF versions of the same document.
+
+<p>
+
+If the document has no graphics, the DVI version can be produced with
+<b>latex</b>, and the PDF version with <b>pdflatex</b>:
+<blockquote>
+<pre>
+latex filename.tex
+
+pdflatex filename.tex
+</pre>
+</blockquote>
+If the document does have graphics, then a solution is to produce a
+PostScript version with <b>dvips</b> (taking care of using the
+<tt>-Ppdf</tt> flag) and to distill it later with the Acrobat
+Distiller.  In our system both operations can be done in one step by
+using the <b>dvi2pdf</b> command:
+<blockquote>
+<pre>
+dvi2pdf filename.dvi
+</pre>
+</blockquote>
+However this has several drawbacks.  The Acrobat Distiller is a
+commercial program, so it costs money to purchase and upgrade (we have
+been using a "frozen" version purchased several years ago).  Also in
+some situations it may give problems with fonts.  So it is a good idea
+to have an alternative based on free software only.  A possibility is
+to use the <b>dvipdfm</b> command (included in the RedHat distribution
+of Linux):
+<blockquote>
+<pre>
+dvipdfm filename.dvi
+</pre>
+</blockquote>
+
+Another alternative (which we
+discuss below) is to to include graphics in a way that both
+<b>latex</b> and <b>pdflatex</b> can manage.
+
+<p>
+
+Graphics can be produced in various formats.  For inclusion in a DVI
+file by <b>latex</b> they must be in EPS (Encapsulated PostScript)
+format.  Unfortunately EPS files cannot be included in PDF documents
+with <b>pdflatex</b>, they must be either in PDF format or in one of
+various graphic formats such as PNG or JPEG.  The way graphics are
+usually included are also different: <b>latex</b> uses the
+<tt>\psfig</tt> command (and the psfig or epsfig package), and
+<b>pdflatex</b> uses <tt>\pdfimage</tt>.  There is however a command
+that can be processed by both <b>latex</b> and <b>pdflatex</b>:
+<tt>\includegraphics</tt> from the <tt>graphics</tt> package - with
+added options if the <tt>graphicx</tt> package is used.
+
+<p>
+
+So assume that you have a figure in an EPS file <tt>foo.ps</tt> and 
+want to include it in a LaTeX file <tt>filename.tex</tt> to be 
+processed by both latex and pdflatex.  Do the following:
+
+<ol>
+
+<p><li> Make a PDF version of the figure:
+<blockquote>
+<pre>
+epstopdf foo.ps
+</pre>
+</blockquote>
+That produces <tt>foo.pdf</tt>. You may also convert your EPS file to
+PNG or some other graphic format if you wish:
+<blockquote>
+<pre>
+convert foo.ps foo.png 
+</pre>
+</blockquote>
+Keep both files, the original <tt>foo.ps</tt> and the new
+<tt>foo.pdf</tt> (or <tt>foo.png</tt>, etc.) together in the working
+directory, since both will be needed.
+
+<p><li> Include the <tt>graphicx</tt> package in your LaTeX file with
+<tt>\usepackage{graphicx}</tt>.
+
+<p><li> Use the <tt>\includegraphics</tt> command with the name of the
+graphic file <tt>foo</tt> <em>without extension</em>.  By doing so
+each of <b>latex</b> and <b>pdflatex</b> will choose the correct
+version of the file to be included, i.e., <b>latex</b> will use
+<tt>foo.ps</tt> and <b>pdflatex</b> will use <tt>foo.pdf</tt> (or
+<tt>foo.png</tt>, or whatever graphic format you have chosen).
+
+</ol>
+
+<p>
+
+The following example illustrates the use of the <tt>graphicx</tt>
+package and the <tt>\includegraphics</tt> command:
+<blockquote>
+<font color=brown>
+<pre>
+\documentclass{article}
+\usepackage{graphicx}
+   
+\begin{document}
+   
+Some text...
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[height=1in,width=1in,angle=-90]{foo}
+\caption{This is a figure.}
+\end{center}
+\end{figure}
+
+More text...
+
+\end{document}
+</pre>
+</font>
+</blockquote>
+
+<p>
+
+The syntax of the <tt>\includegraphics</tt> command is as follows:
+<blockquote>
+<pre>
+\includegraphics[<em>parameters</em>]{<i>filename</i>}
+</pre>
+</blockquote>
+where <em>parameters</em> is a comma-separated list of any of the
+following: <tt>bb=</tt><i>llx lly urx ury</i> (bounding box),
+<tt>width=</tt><i>h_length</i>, <tt>height=</tt><i>v_length</i>,
+<tt>angle=</tt><i>angle</i>, <tt>scale=</tt><i>factor</i>,
+<tt>clip=</tt><i>true/false</i>, <tt>draft=</tt><i>true/false</i>.
+
+
+
+</body>
+
+
+<p><hr><p>
+
+<address>
+Miguel A. Lerma, 7/25/2001
+</address>

@@ -1,0 +1,113 @@
+% DEPENDENCIES: 
+% To use this style file, you need to be using the compiler binary 
+%     xelatex
+%
+% FONTSPEC USAGE:
+% To switch to a particular font at any place in your tex file, use
+% the base \fontspec{..} command:
+% \fontspec{Hoefler Text} Dude, this is hoefler text.
+% {\itshape  ... in italics}
+%
+% I typically don't use it in its raw form though, better to stick
+% to some standards.
+%
+% FONT FAMILY USAGE:
+% The default font families have been reassociated with a font below. There are
+% also some new ones - these can all be used in a familiar way to set 
+% the ensuing font until the next font family call is made.
+%
+% The default types:
+%
+% \rmfamily this is roman text...
+% \sffamily this is sans text...
+% \ttfamily this is mono text...
+%
+% The customised types:
+% 
+% \oldenglishfamily this is roman text...
+% \fantasyfamily this is fantasy text...
+% \cursivefamily this is cursive text...
+% \scififamily this is scifi text...
+% \kofamily this is for korean text...
+%
+% Note that the regular /itshape etc commands can be used inside these.
+%
+% FONT USAGE:
+%
+% If you just want to wrap a word or two here and there, the above families
+% have corresponding wrap commands:
+%
+% \textrm{This is roman text}
+% \textsf{This is sans serif text}
+% \texttt{This is mono text}
+%
+% \textoldenglish{This is old english text}
+% \textfantasy{This is fantasy text}
+% \textcursive{This is cursive text}
+% \textcursive{This is cursive text}
+% \textscifi{This is scifi text}
+% \textko{This is for korean text}
+% 
+
+%****************************** SPECIFICATION *********************************
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{djs_unicode}[26/09/2008 - DJS Unicode Configuration]
+
+\RequirePackage{fontspec} % provides font selecting commands
+\RequirePackage{xunicode} % provides unicode character macros
+\RequirePackage{xltxtra}  % provides some fixes/extras
+
+%**************************** CONFIGURATION ***********************************
+
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+
+%***************************** FONT FAMILIES **********************************
+
+\setmainfont[Mapping=tex-text]{DejaVu Sans}
+\setromanfont[Mapping=tex-text]{DejaVu Sans}
+\setsansfont[Mapping=tex-text]{DejaVu Sans}
+\setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+%\setmainfont[Mapping=tex-text]{Liberation Sans}
+%\setmainfont[Mapping=tex-text]{Nimbus Sans L}
+%\setmonofont{Liberation Mono}
+%\setsansfont[Mapping=tex-text]{UnBatang}
+
+%******************************* OLD ENGLISH **********************************
+
+\newfontfamily\oldenglishfamily{San Marco LT Std} % adobe
+\newcommand{\textoldenglish}[1]{ {\oldenglishfamily #1} }
+
+%******************************** FANTASY *************************************
+
+\newfontfamily\fantasyfamily{Raphael Std} % adobe
+\newcommand{\textfantasy}[1]{ {\fantasyfamily #1} }
+
+%********************************* SCI-FI *************************************
+
+\newfontfamily\scififamily{ITC Benguiat Gothic Std} % adobe
+\newcommand{\textscifi}[1]{ {\scififamily #1} }
+
+%********************************* CURSIVE ************************************
+
+\newfontfamily\cursivefamily{Snell Roundhand LT Std} % adobe
+\newcommand{\textcursive}[1]{ {\cursivefamily #1} }
+
+%********************************* KOREAN  ************************************
+
+\newfontfamily\kofamily{UnBatang}  % korean unfonts
+\newcommand{\textko}[1]{ {\kofamily #1} }
+
+%******************************* SMALL CAPS TITLE *****************************
+
+\newfontfamily\smallcapsfamily{Linux Libertine O} % libertine-ttf
+
+% Set a small caps title
+% #1 - size of the title (normalsize,large,Large...)
+% #2 - title words
+\newcommand{\sctitle}[2][LARGE]{
+   \begin{#1} \fontspec{Linux Libertine O} \textsc{#2} \end{#1}
+}
+
+\endinput

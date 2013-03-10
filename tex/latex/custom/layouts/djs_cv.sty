@@ -1,0 +1,92 @@
+% djs_cv.sty
+%
+% Style file for curriculum vitae's.
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{djs_cv}[02/10/2008 - Curriculum Vitae Format (DJS)]
+
+%****************************** DEPENDENCIES **********************************
+
+\RequirePackage{djs_color,djs_lists,djs_unicode,djs_url}
+
+%****************************** FORMATTING ************************************
+
+\thispagestyle{empty}
+
+%******************************** MARGINS *************************************
+
+\newlength{\widen}
+\newlength{\heighten}
+
+\parindent 0mm
+\parskip 0.7em
+
+\setlength{\widen}{1.00in}
+\setlength{\heighten}{1.00in}
+
+\addtolength{\oddsidemargin}{-\widen}
+\addtolength{\evensidemargin}{-\widen}
+\addtolength{\textwidth}{2\widen}
+\addtolength{\topmargin}{-\heighten}
+\addtolength{\textheight}{2\heighten}
+
+\addtolength{\oddsidemargin}{+0.0in}
+\addtolength{\evensidemargin}{-0.5in}
+
+%********************************* TITLE **************************************
+
+% Simple, centred title
+\newcommand{\cvtitle}[1] {
+  \begin{center}
+    \sctitle[Huge]{#1}
+  \end{center}
+}
+
+%******************************** SECTIONS *************************************
+
+\newenvironment{cvsection}[1]{
+  \vspace{1em}
+  \sctitle{#1} \\
+  \rule[1em]{\textwidth}{1pt}
+  \vspace{-0.5em}
+}{
+}
+
+% Displays a two component header, first component will usually be a link, 2nd a date
+% #1 LHS text (usually a web link to a university/company)
+% #2 RHS text (usually a location)
+\newcommand{\cvheader}[2]{
+  \vspace{0.7em}
+  \textbf{#1} (#2) \\
+}
+
+% Displays more detailed info below the cvheader
+% #1 LHS text (detailed info concernign the cvheader)
+% #2 RHS text (usually a date range)
+\newcommand{\cvheaderinfo}[2]{
+  \hspace{1em} \textbf{\textit{#1}} \hfill \textit{#2} \\
+}
+
+\newcommand{\cvitem}[2]{
+  \hspace{2em} \textit{#1} - {#2} \\
+%  \hspace{2em} \begin{small} \textit{#1} - {#2} \end{small} \\
+}
+
+%******************************* REFERENCE *************************************
+
+\newcommand{\cvrefheader}[2] {
+  \raggedright
+  \vspace{0.5em}
+  \textcolor{maroon}{\textbf{#1}} \\
+  \hspace{1em} \textbf{\textit{#2}} \\
+}
+
+\newcommand{\cvrefitem}[1] {
+  \raggedright
+  \hspace{2em} #1 \\
+}
+
+%********************************** END ****************************************
+
+\endinput
+

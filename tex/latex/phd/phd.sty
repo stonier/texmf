@@ -1,0 +1,67 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{phd}[13/03/2003 - Phd Format]
+
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{epsf}
+\usepackage{color,graphics} % allows insertion of fig files
+
+\parindent 0mm
+\parskip 3mm                % Amount of extra vertical space between paragraphs
+\setlength{\hoffset}{0pt}   % make this 0 if i want content in the middle
+\setlength{\oddsidemargin}{25mm}
+\setlength{\evensidemargin}{25mm}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+%\addtolength{\topmargin}{-0.45in}
+
+\textwidth 400pt
+\textheight 21.0cm
+
+\renewcommand{\baselinestretch}{1.15}
+
+\theoremstyle{plain}
+\newtheorem{notn}{Notation}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{therm}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+
+\newenvironment{eg}
+{\begin{example}\rm}
+{\end{example}\hspace*{\fill}\qedsymbol}
+
+\newenvironment{prf}
+{\begin{list}{}{\leftmargin=1.2cm \rightmargin=1.2cm}
+  \item [{\em Proof:}]}
+{\end{list}{\hspace*{\fill}\qedsymbol}}
+
+% chapter without a number, but referenced in contents
+\def\nonumchapter#1{%
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}}
+
+% preface - chapter without a number, but referenced in
+% contents as a section heading
+\def\preface#1{%
+    \chapter*{#1}
+    \addcontentsline{toc}{section}{#1}}
+
+% developed in notes for units\84146\extnotes\dynam.tex
+\def\mvec#1{\mathop{#1}\limits_{\sim}}
+\def\svec#1#2{\mvec{#1}\!{}_{#2}}
+
+%\newcommand{\Rit}{I\!\!R}       % Peter's old command
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\dist}{{\rm dist}}   % Shouldn't really use \rm - its old latex
+\newcommand{\e}{\epsilon}
+\newcommand{\ta}{ \ensuremath{ \mathsf{\mathsf{t}}}}
+%\newcommand{\ta}{ \ensuremath{ \wr^{ \!\! \_ }}}
+  % Creates a t with a second hor. line through it.
+
+\endinput

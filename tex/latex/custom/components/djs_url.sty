@@ -1,0 +1,28 @@
+%********************************* USAGE ***************************************
+%
+% \href{url}{text}
+% \url{url}
+% ...and more
+%
+%****************************** SPECIFICATION *********************************
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{djs_url}[28/12/2006 - DJS URL Configuration]
+
+\RequirePackage{hyperref}
+% Use with djsurl, plainnat or abbrvnat bibliography styles
+\RequirePackage[numbers]{natbib}
+
+\hypersetup{
+  pdfcenterwindow = true,
+%   pdfpagemode = FullScreen,
+  colorlinks = true,
+%   anchorcolor
+  citecolor = blue,
+%   filecolor
+  linkcolor = green,
+%   pagecolor
+  urlcolor = blue,
+}
+
+\endinput

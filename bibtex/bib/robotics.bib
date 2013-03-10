@@ -1,0 +1,416 @@
+This file was created with JabRef 2.1.
+Encoding: UTF8
+
+@STRING{baseurl = {http://localhost/work/papers/}}
+
+@STRING{IJRR = {International Journal of Robotics Research}}
+
+@ARTICLE{bala_95:modelling_slip,
+  author = {Balakrishna, R. and Ghosal, A.},
+  title = {Modelling of Slip for Wheeled Mobile Robots},
+  journal = {IEEE Transactions on Robotics and Automation},
+  year = {1995},
+  volume = {11},
+  pages = {126-132},
+  number = {1},
+  abstract = {Wheeled Mobile Robots (WMRs) are known to be non-
+	
+	holonomic systems, and most dynamic models of WMRs assume that
+	
+	the wheels undergo rolling without slipping. This paper deals with
+	the
+	
+	problem of modeling and simulation of motion of a WMR when the
+	
+	conditions for rolling are not satisfied at the wheels. We use a traction
+	
+	model where the adhesion coefficient between the wheels of a WMR and
+	
+	a hard flat surface is a function of the wheel slip. This traction
+	model is
+	
+	used in conjunction with the dynamic equations of motion to simulate
+	the
+	
+	motion of the WMR. The simulations show that controllers which do
+	not
+	
+	take into account wheel slip give poor tracking performance for the
+	WMR
+	
+	and path deviation is small only for large adhesion coefficients.
+	This work
+	
+	shows the importance of wheel slip and suggests use of accurate traction
+	
+	models for improving tracking performance of a WMR.},
+  keywords = {slip control},
+  pdf = {papers/omnidirectional_motion/slip/95_modelling_slip_balakrishna.pdf},
+  review = {Generates the nonlinear slip equation for a 3 wheeled omnidirectional
+	robot (just like ours). Then proceeds to do model reference control
+	on the system. The ideal rolling condition is not used and a Lyapunov
+	proof is given for the tracking control scheme.},
+  url = {http://localhost/work/papers/omnidirectional_motion/slip/95_modelling_slip_balakrishna.pdf}
+}
+
+@ARTICLE{dugoff_70:traction_properties,
+  author = {Dugoff, H. and Fancher, S. and Segel, L.},
+  title = {An analysis of tire traction properties and their influence on vehicle
+	dynamic performance},
+  journal = {SAE Transactions},
+  year = {1970},
+  keywords = {slip}
+}
+
+@CONFERENCE{Geyer03,
+  author = {Christopher Geyer},
+  title = {Short Course on Omnidirectional Vision},
+  year = {2003},
+  month = {October},
+  journal = {International Conference on Computer Vision},
+  keywords = {vision omni}
+}
+
+@BOOK{greenwood:dynamics,
+  title = {Advanced Dynamics},
+  publisher = {Prentice Hall},
+  year = {1988},
+  editor = {Prentice-Hall},
+  author = {Greenwood,N.},
+  keywords = {dynamics}
+}
+
+@CONFERENCE{hsu88:redundantManipulators,
+  author = {Hsu, P. and Hauser, J. and Shankar, S.},
+  title = {Dynamic Control of Redundant Manipulators},
+  booktitle = {Proceedings of IEEE Robotics and Automation},
+  year = {1988},
+  volume = {1},
+  pages = {183-187},
+  abstract = {The authors provide a dynamic control law that guarantees the tracking
+	of a given end-effector trajectory and also provides for the control
+	of the redundant joint velocity. The desired redundant joint velocity
+	can then be specified to optimize a cost function over the configurations
+	allowed by the extra degrees of freedom that achieve the given end-effector
+	position.},
+  keywords = {control redundancy},
+  owner = {snorri},
+  pdf = {papers/robotic_manipulators/88-dynamic_redundant_manipulator_control_hsu.pdf},
+  review = {Shows how to incorporporate a velocity driven null space control with
+	full dynamics.},
+  timestamp = {2006.10.18},
+  url = {http://localhost/work/papers/robotic_manipulators/88-dynamic_redundant_manipulator_control_hsu.pdf}
+}
+
+@ARTICLE{khatib_00:holonomic_control,
+  author = {Khatib, O. and Holmberg, R.},
+  title = {Development and Control of a Holonomic Mobile Robot for Mobile Manipulation
+	Tasks},
+  journal = {International Journal of Robotics Research},
+  year = {2000},
+  volume = {19},
+  pages = {1066-1074},
+  number = {11},
+  abstract = {Mobile manipulator systems hold promise in many industrial and service
+	applications including assembly, inspection, and work in hazardous
+	environments. The integration of a manipulator and a mobile robot
+	base places special demands on the vehicle’s drive system. For smooth,
+	accurate motion and coordination with an on-board manipulator, a
+	holonomic vibration-free wheel system that can be dynamically controlled
+	is needed. In this paper, we present the design and development of
+	a powered caster vehicle (PCV), which is shown to possess the desired
+	mechanical properties. To dynamically control the PCV, a new approach
+	for modeling and controlling the dynamics of this parallel redundant
+	system is proposed. The experimental results presented in the paper
+	illustrate the performance of this platform and demonstrate the signiﬁcance
+	of dynamic control and its effectiveness in mobile manipulation tasks.},
+  keywords = {slip control},
+  pdf = {papers/omnidirectional_motion/control/00-holonomy_khatib.pdf},
+  review = {Very good overview of mobile robots as well as the development of
+	slip dynamics and control given a redundant number of wheels.},
+  url = {http://localhost/work/papers/omnidirectional_motion/control/00-holonomy_khatib.pdf}
+}
+
+@BOOK{lewis:roboticmanipulators,
+  title = {Control of Robot Manipulators},
+  publisher = {Prentice Hall},
+  year = {1993},
+  editor = {Prentice-Hall},
+  author = {Lewis, F. and Abdallah, C. and Dawson, D.},
+  keywords = {control}
+}
+
+@CONFERENCE{li_05:slip_minimisation,
+  author = {Liu, Y. and Oetomo, D. and Macelo, H.},
+  title = {Torque Distribution and Slip Minimization in an Omnidirectional Mobile
+	Base},
+  booktitle = {Proceedings of International Conference on Advanced Robotics},
+  year = {2005},
+  pages = {567-572},
+  abstract = {Two forward kinematic models which are used in the control of an omnidirectional
+	mobile base are evaluated. These two models result in different sensitivities
+	to joint position error. The analysis and experimental results in
+	this paper demonstrate the capabilities of dynamic model in improving
+	the sensitivity of the forward kinematic model, resulting in a more
+	even distribution of joint torques and in minimizing the amount of
+	slip between wheels.},
+  keywords = {slip control},
+  pdf = {papers/omnidirectional_motion/slip/05-slip_minimisation_liu.pdf},
+  review = {Uses powered caster wheels instead of omni-wheels. But there's redundancy
+	in these. They compare the results of a torque minimisation scheme
+	with basic kinematic control with some reference to slippage. Details
+	are lacking on the kinematic control side of things, but its a good
+	starting point for checking out various systesms. They provide references
+	leading to work on operational space formulation and an orthogonal
+	complement derivation for the equations of motion.},
+  url = {http://localhost/work/papers/omnidirectional_motion/slip/05-slip_minimisation_liu.pdf}
+}
+
+@CONFERENCE{Liu03,
+  author = {Liu, Y. and Wu, X. and Zhu, J. and Lew, J.},
+  title = {Omni-directional mobile robot controller design by trajectory linearization},
+  booktitle = {Proceedings of the American Control Conference},
+  year = {2003},
+  volume = {4},
+  pages = {3423-3428},
+  abstract = {In this paper, modeling and nonlinear controller design for an omnidirectional
+	mobile robot are presented. Based on the robot dynamics model, a
+	nonlinear controller is designed using the trajectory linearization
+	control (TLC) method. Some simulation results of the controller are
+	presented.},
+  keywords = {control omni},
+  owner = {snorri},
+  pdf = {papers/omnidirectional_motion/control/03-controllerDesign_liu.pdf},
+  review = {Develops an inner/outer loop controller where the outer loop control
+	is done using a simple kinematic controller. The inner loop can be
+	achieved using a class PD controller or for better performance, a
+	dynamic controller. Pretty complicated setup.},
+  timestamp = {2007.01.30},
+  url = {http://localhost/work/papers/omnidirectional_motion/control/03-controllerDesign_liu.pdf}
+}
+
+@CONFERENCE{Kuppuswamy06,
+  author = {N.S. Kuppuswamy, S.-H. Cho, D. Stonier, S.-L. Choi, and J.-H. Kim},
+  title = {Design of an Omnidirectional Robot for FIRA Robosot},
+  booktitle = {Proceedings of 2006 FIRA Robot World Congress},
+  year = {2006},
+  month = {June},
+  keywords = {omni},
+  pdf = {papers/stonier/06/fira/fira2006_revised.pdf},
+  url = {http://localhost/work/papers/stonier/06/fira/fira2006_revised.pdf}
+}
+
+@ARTICLE{olson_03:nonlinear_traction,
+  author = {Olson, B. and Shaw, S. and Stepan, G.},
+  title = {Nonlinear Dynamics of Vehicle Traction},
+  journal = {Vehicle System Dynamics},
+  year = {2003},
+  volume = {40},
+  pages = {377-399},
+  number = {6},
+  abstract = {The purpose of this study is to understand the nonlinear dynamics
+	of longitudinal ground vehicle traction. Speciﬁcally, single-wheel
+	models of rubber-tired automobiles under straight-ahead braking and
+	acceleration conditions are investigated in detail. Customarily,
+	the forward vehicle speed and the rotational rate of the tire/wheel
+	are taken as dynamic states. This paper motivates an alternative
+	formulation in which wheel slip, a dimen-sionless measure of the
+	difference between the vehicle speed and the circumferential speed
+	of the tire relative to the wheel center, replaces the angular velocity
+	of the tire/wheel as a dynamic state. This formulation offers new
+	insight into the dynamic behavior of vehicle traction. The unique
+	features of the modeling approach allow one to capture the full range
+	of dynamic responses of the single-wheel traction models in a relatively
+	simple geometric manner. The models developed here may also be useful
+	for developing and implementing anti-lock brake and traction control
+	control schemes.},
+  keywords = {slip},
+  pdf = {papers/omnidirectional_motion/slip/03-nonlinear_traction_olson.pdf},
+  review = {Best paper on slip dynamics I've found. Does a detailed analysis of
+	slip dynamics for a single wheel.},
+  url = {http://localhost/work/papers/omnidirectional_motion/slip/03-nonlinear_traction_olson.pdf}
+}
+
+@ARTICLE{rojas_06:holonomic_control,
+  author = {Rojas, R. and Forster, A.},
+  title = {Holonomic Control of a Robot with an Omnidirectional Drive},
+  journal = {Kunstliche Intelligenz},
+  year = {2006},
+  abstract = {This paper shows how to control a robot with omnidirectional wheels,
+	using as example robots with four motors, and generalizing to n motors.
+	More than three wheels provide redundancy: many combinations of motors
+	speeds can provide the same Euclidean movement. Since the system
+	is over-determined, we show how to compute a set of consistent and
+	optimal motor forces and speeds using the pseudoinverse of coupling
+	matrices. This approach allows us also to perform a consistency check
+	to determine whether a wheel is slipping on the ﬂoor or not. We show
+	that it is possible to avoid wheel slippage by driving the robot
+	with a motor torque under a certain threshold or handle it and make
+	high accelerations possible.},
+  keywords = {slip control omni},
+  pdf = {papers/omnidirectional_motion/slip/06-holonomic_control_rojas.pdf},
+  publisher = {Verlag},
+  review = {Pretty simplistic paper. Only key point is the identification of slip
+	- but its something that they're only able to do since they have
+	four wheels.},
+  url = {http://localhost/work/papers/omnidirectional_motion/slip/06-holonomic_control_rojas.pdf}
+}
+
+@BOOK{vidyasagar_86:robot,
+  title = {Robot Dynamics and Control},
+  publisher = {John Wiley and Sons},
+  year = {1986},
+  author = {Spong, M. and Vidyasagar, G.},
+  keywords = {dynamics control}
+}
+
+@UNPUBLISHED{stonier_06:dynamics,
+  author = {Stonier, D.},
+  title = {Omnidirectional Dynamics},
+  note = {Robosot Documentation},
+  year = {2006},
+  keywords = {control dynamics slip omni},
+  pdf = {notes/omnidirectional/dynamics/dynamics.pdf},
+  publisher = {KAIST RIT Lab},
+  review = {Kinematics and Equations of Motion for an omnidirectional robot. Also
+	considers Ideal Rolling and various control implementations.},
+  url = {http://localhost/work/notes/omnidirectional/dynamics/dynamics.pdf}
+}
+
+@UNPUBLISHED{stonier_06:redundancy,
+  author = {Stonier, D.},
+  title = {Optimising the Redundancy},
+  note = {Robosot Documentation},
+  year = {2006},
+  keywords = {control slip omni},
+  pdf = {notes/omnidirectional/redundancy/redundancy.pdf},
+  publisher = {KAIST RIT Lab},
+  review = {Looks at using the redundancy in the omnidirectional robot when trying
+	to control for cartesian position only (2 variables, 3 wheels).},
+  url = {http://localhost/work/notes/omnidirectional/redundancy/redundancy.pdf}
+}
+
+@UNPUBLISHED{stonier_06:slip,
+  author = {Stonier, D.},
+  title = {Nonlinear Slip Dynamics},
+  note = {Robosot Documentation},
+  year = {2006},
+  keywords = {slip},
+  pdf = {notes/omnidirectional/slip/nonlinear_slip_model.pdf},
+  publisher = {KAIST RIT Lab},
+  review = {Nonlinear slip dynamics for a single wheel. Particularly interesting
+	is the fact that wheels are always slipping under acceleration/braking.},
+  url = {http://localhost/work/notes/omnidirectional/slip/nonlinear_slip_model.pdf}
+}
+
+@ARTICLE{williams_02:dynamic_slip_model,
+  author = {Williams, R. and Carter, B. and Gallina, P. and Rosati, G.},
+  title = {Dynamic Model with Slip for Wheeled Omnidirectional Robots},
+  journal = {IEEE Transactions on Robotics and Automation},
+  year = {2002},
+  volume = {18},
+  number = {3},
+  abstract = {A dynamic model is presented for omnidirectional wheeled mobile robots,
+	including wheel/motion surface slip. We derive the dynamics model,
+	experimentally measure friction coefficients, and measure the force
+	to cause slip (to validate our friction model). Dynamic simulation
+	examples are presented to demonstrate omnidirectional motion with
+	slip. After developing an improved friction model, compared to our
+	initial model, the simulation results agree well with experimentally-measured
+	trajectory data with slip. Initially, we thought that only high robot
+	velocity and acceleration governed the resulting slipping motion.
+	However, we learned that the rigid material existing in the discontinuities
+	between omnidirectional wheel rollers plays an equally important
+	role in determining omnidirectional mobile robot dynamic slip motion,
+	even at low rates and accelerations.},
+  keywords = {slip omni dynamics},
+  pdf = {papers/omnidirectional_motion/slip/02-omni_slip_modelling_williams.ps},
+  review = {Experimentally determines the slip co-efficient. Also tries to determine
+	the maximum traction forces allowed on a mobile robot given a friction
+	co-efficient. This may be useful in determining optimisation constraints.},
+  url = {http://localhost/work/papers/omnidirectional_motion/slip/02-omni_slip_modelling_williams.ps}
+}
+
+@ARTICLE{wit_02:dynamic_friction_models,
+  author = {Wit, C. and Tsiotras, P. and Velenis, E.},
+  title = {Dynamic Friction Models for Longitudinal Road/Tire Interaction: Theoretical
+	Advances},
+  year = {2002},
+  abstract = {In this paper we derive a new dynamic friction force model for the
+	longitudinal road/tire interaction for wheeled ground vehicles. The
+	model is based on a dynamic friction model developed previously for
+	contact-point friction problems, called the LuGre model [1]. By assuming
+	a contact patch between the tire and the ground we develop a partial
+	differential equation for the distribution of the friction force
+	along the patch. An ordinary differential equation (the lumped model)
+	for the friction force is developed based on the patch boundary conditions
+	and the normal force distribution along the contact patch.},
+  keywords = {slip},
+  pdf = {papers/omnidirectional_motion/slip/02-nonlinear_dynamic_slip_wit.pdf},
+  review = {A more involved dynamic model for slip. Many theoretical models for
+	representation of slip, but a bit beyond our practical needs.},
+  url = {papers/omnidirectional_motion/slip/02-nonlinear_dynamic_slip_wit.pdf}
+}
+
+@comment{jabref-meta: selector_keywords:control;dynamics;omni;redundan
+cy;slip;vision;}
+
+@comment{jabref-meta: psDirectory:/mnt/froody/work/;}
+
+@comment{jabref-meta: pdfDirectory:/mnt/froody/work/;}
+
+@comment{jabref-meta: groupsversion:3;}
+
+@comment{jabref-meta: groupstree:
+0 AllEntriesGroup:;
+1 KeywordGroup:Control\;0\;keywords\;control\;0\;0\;;
+2 KeywordGroup:Redundancy\;0\;keywords\;redundancy\;0\;0\;;
+1 KeywordGroup:Vision\;0\;keywords\;vision\;0\;0\;;
+1 KeywordGroup:Dynamics\;0\;keywords\;dynamics\;0\;0\;;
+2 KeywordGroup:Slip\;0\;keywords\;slip\;0\;0\;;
+1 SearchGroup:Omnidirectional\;0\;keywords=omni or keywords=slip\;0\;0
+\;;
+}
+
+or = {Wit, C. and Tsiotras, P. and Velenis, E.},
+  title = {Dynamic Friction Models for Longitudinal Road/Tire Interaction: Theoretical
+	Advances},
+  year = {2002},
+  abstract = {In this paper we derive a new dynamic friction force model for the
+	longitudinal road/tire interaction for wheeled ground vehicles. The
+	model is based on a dynamic friction model developed previously for
+	contact-point friction problems, called the LuGre model [1]. By assuming
+	a contact patch between the tire and the ground we develop a partial
+	differential equation for the distribution of the friction force
+	along the patch. An ordinary differential equation (the lumped model)
+	for the friction force is developed based on the patch boundary conditions
+	and the normal force distribution along the contact patch.},
+  keywords = {slip wheeledRobots},
+  pdf = {papers/omnidirectional_motion/slip/02-nonlinear_dynamic_slip_wit.pdf},
+  review = {A more involved dynamic model for slip. Many theoretical models for
+	representation of slip, but a bit beyond our practical needs.},
+  url = {papers/omnidirectional_motion/slip/02-nonlinear_dynamic_slip_wit.pdf}
+}
+
+@comment{jabref-meta: psDirectory:/mnt/froody/work/;}
+
+@comment{jabref-meta: selector_keywords:control;dynamics;omni;redundan
+cy;slip;vision;}
+
+@comment{jabref-meta: pdfDirectory:/mnt/froody/work/;}
+
+@comment{jabref-meta: groupsversion:3;}
+
+@comment{jabref-meta: groupstree:
+0 AllEntriesGroup:;
+1 KeywordGroup:Control\;0\;keywords\;control\;0\;0\;;
+2 KeywordGroup:Redundancy\;0\;keywords\;redundancy\;0\;0\;;
+2 SearchGroup:InversePendulum\;0\;keywords = inversePendulum\;0\;0\;;
+1 KeywordGroup:Vision\;0\;keywords\;vision\;0\;0\;;
+1 KeywordGroup:Dynamics\;0\;keywords\;dynamics\;0\;0\;;
+2 KeywordGroup:Slip\;0\;keywords\;slip\;0\;0\;;
+1 SearchGroup:WheeledRobots\;0\;keywords = wheeledRobots\;0\;0\;;
+2 SearchGroup:Omnidirectional\;0\;keywords=omni or keywords=slip\;0\;0
+\;;
+}
+
