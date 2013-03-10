@@ -10,8 +10,10 @@ To use, simply clone and link to your home directory.
 > texhash ~/texmf
 ```
 
-Prior to running xelatex, you will need some fonts installed:
+These are for running xelatex, so make sure that is installed along with some fonts that
+the style files make use of:
 
 ```
+> sudo apt-get install texlive-xetex kile
 > sudo apt-get install ttf-linux-libertine ttf-dejavu ttf-liberation fonts-unfonts-extra fonts-unfonts-core
 ```
