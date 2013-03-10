@@ -6,5 +6,6 @@ To use, simply clone and link to your home directory.
 
 ```
 > git clone https://github.com/stonier/texmf.git
-> texhash /path/to/clone/texmf
+> ln -s /path/to/clone/texmf ~/texmf
+> texhash ~/texmf
 ```
