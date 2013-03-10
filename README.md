@@ -9,3 +9,9 @@ To use, simply clone and link to your home directory.
 > ln -s /path/to/clone/texmf ~/texmf
 > texhash ~/texmf
 ```
+
+Prior to running xelatex, you will need some fonts installed:
+
+```
+> sudo apt-get install ttf-linux-libertine ttf-dejavu ttf-liberation fonts-unfonts-extra fonts-unfonts-core
+```
