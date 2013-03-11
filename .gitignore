@@ -31,3 +31,5 @@
 *.xdy
 *.tdo
 ls-R
+*~
+*.backup

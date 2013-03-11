@@ -24,10 +24,10 @@
 %
 % The customised types:
 % 
-% \oldenglishfamily this is roman text...
+% \oldenglishfamily this is roman text... - disabled till I replace adobe font.
 % \fantasyfamily this is fantasy text...
-% \cursivefamily this is cursive text...
-% \scififamily this is scifi text...
+% \cursivefamily this is cursive text...  - disabled till I replace adobe font.
+% \scififamily this is scifi text...      - disabled till I replace adobe font.
 % \kofamily this is for korean text...
 %
 % Note that the regular /itshape etc commands can be used inside these.
@@ -41,13 +41,18 @@
 % \textsf{This is sans serif text}
 % \texttt{This is mono text}
 %
-% \textoldenglish{This is old english text}
+% \textoldenglish{This is old english text} - disabled until I replace with non-adobe font
 % \textfantasy{This is fantasy text}
-% \textcursive{This is cursive text}
-% \textcursive{This is cursive text}
-% \textscifi{This is scifi text}
+% \textcursive{This is cursive text} - disabled until I replace with non-adobe font
+% \textscifi{This is scifi text} - disabled until I replace with non-adobe font
 % \textko{This is for korean text}
+%
+% SPECIAL CASES
 % 
+% There is also commands for small caps type.
+% 
+% \smallcapsfamily
+% \sctitle{Title}{- some slightly smaller explanation}
 
 %****************************** SPECIFICATION *********************************
 
@@ -57,6 +62,11 @@
 \RequirePackage{fontspec} % provides font selecting commands
 \RequirePackage{xunicode} % provides unicode character macros
 \RequirePackage{xltxtra}  % provides some fixes/extras
+
+%****************************** TEXLIVE FONTS *********************************
+
+% These are non otf/ttf fonts that have style files (from texlive-fonts-extra)
+\RequirePackage{carolmin} % defines \cminfamily and \textcmin for \fantasyfamily
 
 %**************************** CONFIGURATION ***********************************
 
@@ -76,23 +86,25 @@
 
 %******************************* OLD ENGLISH **********************************
 
-\newfontfamily\oldenglishfamily{San Marco LT Std} % adobe
-\newcommand{\textoldenglish}[1]{ {\oldenglishfamily #1} }
+%\newfontfamily\oldenglishfamily{San Marco LT Std} % adobe
+%\newcommand{\textoldenglish}[1]{ {\oldenglishfamily #1} }
 
 %******************************** FANTASY *************************************
 
-\newfontfamily\fantasyfamily{Raphael Std} % adobe
+%\newfontfamily\fantasyfamily{Raphael Std} % adobe
+%\newcommand{\textfantasy}[1]{ {\fantasyfamily #1} }
+\newcommand\fantasyfamily{\cminfamily}
 \newcommand{\textfantasy}[1]{ {\fantasyfamily #1} }
 
 %********************************* SCI-FI *************************************
 
-\newfontfamily\scififamily{ITC Benguiat Gothic Std} % adobe
-\newcommand{\textscifi}[1]{ {\scififamily #1} }
+%\newfontfamily\scififamily{ITC Benguiat Gothic Std} % adobe
+%\newcommand{\textscifi}[1]{ {\scififamily #1} }
 
 %********************************* CURSIVE ************************************
 
-\newfontfamily\cursivefamily{Snell Roundhand LT Std} % adobe
-\newcommand{\textcursive}[1]{ {\cursivefamily #1} }
+%\newfontfamily\cursivefamily{Snell Roundhand LT Std} % adobe
+%\newcommand{\textcursive}[1]{ {\cursivefamily #1} }
 
 %********************************* KOREAN  ************************************
 
