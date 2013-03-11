@@ -26,7 +26,7 @@
 % 
 % \oldenglishfamily this is roman text... - disabled till I replace adobe font.
 % \fantasyfamily this is fantasy text...
-% \cursivefamily this is cursive text...  - disabled till I replace adobe font.
+% \cursivefamily this is cursive text...
 % \scififamily this is scifi text...      - disabled till I replace adobe font.
 % \kofamily this is for korean text...
 %
@@ -43,7 +43,7 @@
 %
 % \textoldenglish{This is old english text} - disabled until I replace with non-adobe font
 % \textfantasy{This is fantasy text}
-% \textcursive{This is cursive text} - disabled until I replace with non-adobe font
+% \textcursive{This is cursive text}
 % \textscifi{This is scifi text} - disabled until I replace with non-adobe font
 % \textko{This is for korean text}
 %
@@ -57,7 +57,7 @@
 %****************************** SPECIFICATION *********************************
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{djs_unicode}[26/09/2008 - DJS Unicode Configuration]
+\ProvidesPackage{djs_unicode}[17/03/2013 - DJS Unicode Configuration]
 
 \RequirePackage{fontspec} % provides font selecting commands
 \RequirePackage{xunicode} % provides unicode character macros
@@ -74,15 +74,20 @@
 
 %***************************** FONT FAMILIES **********************************
 
-\setmainfont[Mapping=tex-text]{DejaVu Sans}
-\setromanfont[Mapping=tex-text]{DejaVu Sans}
-\setsansfont[Mapping=tex-text]{DejaVu Sans}
-\setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
-
+%\setmainfont[Mapping=tex-text]{DejaVu Sans}
+%\setromanfont[Mapping=tex-text]{DejaVu Sans}
+%\setsansfont[Mapping=tex-text]{DejaVu Sans}
+%\setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
 %\setmainfont[Mapping=tex-text]{Liberation Sans}
 %\setmainfont[Mapping=tex-text]{Nimbus Sans L}
 %\setmonofont{Liberation Mono}
 %\setsansfont[Mapping=tex-text]{UnBatang}
+
+% Make sure we can do korean out of the box (unicode fonts)
+\setmainfont[Mapping=tex-text]{UnBatang}
+\setromanfont[Mapping=tex-text]{UnBatang}
+\setsansfont[Mapping=tex-text]{UnBatang}
+\setmonofont[Mapping=tex-text]{Liberation Mono}
 
 %******************************* OLD ENGLISH **********************************
 
@@ -105,6 +110,8 @@
 
 %\newfontfamily\cursivefamily{Snell Roundhand LT Std} % adobe
 %\newcommand{\textcursive}[1]{ {\cursivefamily #1} }
+\newfontfamily\cursivefamily{UnPilgia}
+\newcommand{\textcursive}[1]{ {\cursivefamily #1} }
 
 %********************************* KOREAN  ************************************
 
