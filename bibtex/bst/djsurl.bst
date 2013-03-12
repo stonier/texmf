@@ -294,8 +294,7 @@ FUNCTION {format.issn}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { "" }
-%    { new.block "Available from: \url{" url * "}" * }
+    { new.block "Available from: \url{" url * "}" * }
   if$
 }
 
@@ -717,35 +716,7 @@ FUNCTION {format.incoll.inproc.crossref}
   " \citet{" * crossref * "}" *
 }
 
-FUNCTION {article}
-{ output.bibitem
-  format.authors "author" output.check
-  author format.key output
-  new.block
-  format.title "title" output.check
-  new.block
-  crossref missing$
-    { journal emphasize "journal" output.check
-      eid empty$
-        { format.vol.num.pages output }
-        { format.vol.num.eid output }
-      if$
-      format.date "year" output.check
-    }
-    { format.article.crossref output.nonnull
-      eid empty$
-        { format.pages output }
-        { format.eid output }
-      if$
-    }
-  if$
-  format.issn output
-  format.doi output
-  format.url output
-  new.block
-  note output
-  fin.entry
-}
+
 
 FUNCTION {book}
 { output.bibitem
@@ -871,12 +842,42 @@ FUNCTION {incollection}
   fin.entry
 }
 
+FUNCTION {article}
+{ output.bibitem
+  format.authors "author" output.check
+  author format.key output
+  new.block
+  format.btitle "title" output.check
+  new.block
+  crossref missing$
+    { journal emphasize "journal" output.check
+      eid empty$
+        { format.vol.num.pages output }
+        { format.vol.num.eid output }
+      if$
+      format.date "year" output.check
+    }
+    { format.article.crossref output.nonnull
+      eid empty$
+        { format.pages output }
+        { format.eid output }
+      if$
+    }
+  if$
+  format.issn output
+  format.doi output
+  format.url output
+  new.block
+  note output
+  fin.entry
+}
+
 FUNCTION {inproceedings}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.btitle "title" output.check
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
@@ -933,7 +934,7 @@ FUNCTION {mastersthesis}
   format.authors "author" output.check
   author format.key output
   new.block
-  format.title "title" output.check
+  format.btitle "title" output.check
   new.block
   "Master's thesis" format.thesis.type output.nonnull
   school "school" output.check
@@ -1429,7 +1430,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "\providecommand{\natexlab}[1]{#1}"
   write$ newline$
-  "\providecommand{\url}[1]{\texttt{#1}}"
+  "\providecommand{\url}[1]{\textrm{#1}}"
   write$ newline$
   "\expandafter\ifx\csname urlstyle\endcsname\relax"
   write$ newline$
