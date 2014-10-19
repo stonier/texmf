@@ -15,5 +15,5 @@ the style files make use of:
 
 ```
 > sudo apt-get install texlive-xetex kile
-> sudo apt-get install ttf-linux-libertine ttf-dejavu ttf-liberation fonts-unfonts-extra fonts-unfonts-core
+> sudo apt-get install ttf-linux-libertine ttf-dejavu ttf-liberation fonts-unfonts-extra fonts-unfonts-core texlive-fonts-extra
 ```
